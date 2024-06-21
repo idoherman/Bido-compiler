@@ -1,0 +1,4 @@
+CompilerProject/cmake-build-debug/
+CompilerProject/.idea/
+.idea/
+*.xml
