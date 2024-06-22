@@ -1,0 +1,13 @@
+# The function defines three variables and checks a condition.
+# The function returns the value of result (and prints it).
+
+function < main > returns int gets ( ) 
+{
+	char < letter > is 'a' .
+	bool < check > is true .
+	int < result > is 0 .
+	if ( letter = 'a' and check and false = 0 ) {
+		result is 1 .
+	}
+	return result . 	
+}

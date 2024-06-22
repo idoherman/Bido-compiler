@@ -1,0 +1,14 @@
+# This program checks the value of x and defines new variable (y)/changes the exist variable (x) according to the condition.
+# The function returns the value of x (and prints it).
+
+function < main > returns int gets ( ) {
+	int < x > is ( 4 + - 4 ) .
+	if ( x = 4 ) {	# not true.
+		int < y > .
+		y is - x .
+	} 
+	if not {
+		x is 4 .
+	}
+	return x .
+}

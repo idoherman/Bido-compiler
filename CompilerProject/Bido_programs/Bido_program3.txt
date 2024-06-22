@@ -1,0 +1,12 @@
+# The function checks if x value is "Hello".
+# The function returns the value of y (and prints it).
+
+function < main > returns int gets ( ) 
+{
+	int < y > is - 1 .
+	text < x > is "Hello" . 
+	if ( "Hello" = x ) {
+		y is 100 .
+	}
+	return y . 	
+}

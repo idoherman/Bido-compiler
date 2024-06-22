@@ -1,0 +1,13 @@
+# The function compares between "check_int" and "check_bool".
+# The function returns the value of x (and prints it).
+
+function < main > returns int gets ( ) 
+{
+	int < x > is 0 .
+	int < check_int > is 1 .
+	bool < check_bool > is true .
+	if ( check_int = check_bool ) {
+		x is 1 .
+	}	
+	return x . 	
+}

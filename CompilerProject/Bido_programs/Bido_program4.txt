@@ -1,0 +1,10 @@
+# The function calculates the square of x plus the square of y plus 100.
+# The function returns the value of result (and prints it).
+
+function < main > returns int gets ( ) 
+{
+	int < x > is 3 .
+	int < y > is 4 . 
+	int < result > is ( x * x ) + ( y * y ) + 100 .
+	return result . 	
+}
