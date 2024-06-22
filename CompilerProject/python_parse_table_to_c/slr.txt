@@ -1,0 +1,63 @@
+prog' -> prog
+prog -> function < main > returns int gets ( ) { block return const . }
+block -> stmt . block
+block -> block_stmt block
+block -> ''
+stmt -> declare_stmt
+stmt -> assignment_stmt
+block_stmt -> if_stmt
+block_stmt -> if_not_stmt
+declare_stmt -> VARIABLE_TYPE < VARIABLE_NAME >
+declare_stmt -> VARIABLE_TYPE < VARIABLE_NAME > is expr
+assignment_stmt -> VARIABLE_NAME is expr
+if_stmt -> if ( expr ) { block }
+if_not_stmt -> if_stmt if not { block }
+
+expr -> expr12
+expr12 -> expr12 or expr11
+expr12 -> expr11
+expr11 -> expr11 and expr10
+expr11 -> expr10
+
+expr10 -> expr10 | expr9
+expr10 -> expr9
+expr9 -> expr9 ^ expr8
+expr9 -> expr8
+expr8 -> expr8 & expr7
+expr8 -> expr7
+
+expr7 -> expr7 EQUAL_CMP_OP expr6
+expr7 -> expr6
+expr6 -> expr6 CMP_OP expr5
+expr6 -> expr5
+
+expr5 -> expr4
+
+expr4 -> expr4 ADD_OP expr3
+expr4 -> expr3
+expr3 -> expr3 MULT_OP expr2
+expr3 -> expr2
+
+expr2 -> UNARY_OP expr2
+expr2 -> expr1
+
+expr1 -> ( expr )
+expr1 -> const
+
+const -> VARIABLE_NAME
+const -> VARIABLE_VALUE
+
+
+
+
+FOR IDO:
+
+UNARY_OP      + - !				-> only on int or ! for bool
+MULT_OP       * / %				-> only for int
+ADD_OP        + - 				-> only int.
+CMP_OP        < > <= >=			-> only int and bool and with each other.
+EQUAL_CMP_OP  = !=				-> char and text only same, int and bool with each other.
+
+| ^ & -> only for int.
+and -> int or bool with each other.
+or -> int or bool with each other.
