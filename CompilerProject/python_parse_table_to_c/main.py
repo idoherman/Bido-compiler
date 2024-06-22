@@ -16,25 +16,25 @@ def main():
     GOTO_START = 31
     state = 0
     for array in data[3:]:
-        print(f"// state {state} \n")
+        print(f"\t// state {state} \n")
         for index, element in enumerate(array):
             if element != '':
                 if index > 0 and index < GOTO_START:
                     if element == 'acc':
-                        print(f"parse_table->action_table[{state}][{index - 1}].type = ACCEPT_ACTION;")
-                        print(f"parse_table->action_table[{state}][{index - 1}].state = -2;")
+                        print(f"\tparse_table->action_table[{state}][{index - 1}].type = ACCEPT_ACTION;")
+                        print(f"\tparse_table->action_table[{state}][{index - 1}].state = -2;")
                     else:
                         if element[0] == 's':
-                            print(f"parse_table->action_table[{state}][{index - 1}].type = SHIFT_ACTION;")
+                            print(f"\tparse_table->action_table[{state}][{index - 1}].type = SHIFT_ACTION;")
                         elif element[0] == 'r':
-                            print(f"parse_table->action_table[{state}][{index - 1}].type = REDUCE_ACTION;")
-                        print(f"parse_table->action_table[{state}][{index - 1}].state = {int(element[1:])};")
+                            print(f"\tparse_table->action_table[{state}][{index - 1}].type = REDUCE_ACTION;")
+                        print(f"\tparse_table->action_table[{state}][{index - 1}].state = {int(element[1:])};")
 
                 if index > GOTO_START and index <len(array):
-                    print(f"parse_table->goto_table[{state}][{index - GOTO_START}].state = {int(element)};")
+                    print(f"\tparse_table->goto_table[{state}][{index - GOTO_START}].state = {int(element)};")
 
 
-        print("\n \n \n")
+        print("\n")
         state += 1
 
 
